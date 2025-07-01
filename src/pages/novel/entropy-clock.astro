@@ -1,0 +1,136 @@
+---
+// 《熵减时钟》目录页 (src/pages/novel/entropy-clock.astro)
+import Layout from '../../layouts/ArticleLayout.astro'; // 复用我们统一的暗色文章布局
+---
+<Layout title="《熵减时钟》 · 目录">
+
+    <!-- 扉页题词 -->
+    <div class="text-center mb-12 animate-fade-in">
+        <p class="text-lg text-gray-400 italic">“白发是月光染血的遗书，</p>
+        <p class="text-lg text-gray-400 italic">红眸是太阳焚毁的残渣。”</p>
+        <p class="text-right text-sm text-gray-500 mt-2">—熵婆预言·归墟残章</p>
+    </div>
+
+    <!-- 序章 -->
+    <section class="mb-10 animate-fade-in" style="animation-delay: 0.2s;">
+        <h2 class="section-title">序章：砌墙者的自白</h2>
+        <blockquote class="prologue-quote">
+            “当我为暗域砌下第一块砖，<br>
+            掌心传来37.2℃的胎动——<br>
+            那是我未出生女儿的心跳，<br>
+            在熵减齿轮间永恒轮回。”
+        </blockquote>
+    </section>
+
+    <!-- 卷一 -->
+    <section class="mb-10 animate-fade-in" style="animation-delay: 0.4s;">
+        <h2 class="section-title">卷一：茧房裂痕</h2>
+        <ol class="chapter-list">
+            <li><a href="/novel/entropy-clock/1" class="chapter-link">瓷地板的婴啼</a></li>
+            <li><a href="/novel/entropy-clock/2" class="chapter-link">蜃血河数据坟场</a></li>
+            <li><a href="/novel/entropy-clock/3" class="chapter-link">魔女砖墙的体温</a></li>
+            <li><a href="/novel/entropy-clock/4" class="chapter-link">蓬莱囚笼</a></li>
+            <li><a href="/novel/entropy-clock/5" class="chapter-link">全息符咒暴动</a></li>
+            <li><a href="/novel/entropy-clock/6" class="chapter-link">税收闭环</a></li>
+            <li><a href="/novel/entropy-clock/7" class="chapter-link">熵钟初啼</a></li>
+        </ol>
+    </section>
+
+    <!-- 卷二 -->
+    <section class="mb-10 animate-fade-in" style="animation-delay: 0.6s;">
+        <h2 class="section-title">卷二：归墟回响</h2>
+        <ol class="chapter-list" start="8">
+            <li><a href="/novel/entropy-clock/8" class="chapter-link">困兽图腾阵</a></li>
+            <li><a href="/novel/entropy-clock/9" class="chapter-link">婴胎黑市暴动</a></li>
+            <li><a href="/novel/entropy-clock/10" class="chapter-link">记忆清洗协议</a></li>
+            <li><a href="/novel/entropy-clock/11" class="chapter-link">人壳宣言</a></li>
+            <li><a href="/novel/entropy-clock/12" class="chapter-link">陀螺量子坟场</a></li>
+            <li><a href="/novel/entropy-clock/13" class="chapter-link">血钥献祭</a></li>
+            <li><a href="/novel/entropy-clock/14" class="chapter-link">熵婆的奶嘴</a></li>
+        </ol>
+    </section>
+
+    <!-- 卷三 -->
+    <section class="mb-10 animate-fade-in" style="animation-delay: 0.8s;">
+        <h2 class="section-title">卷三：墟界墓碑</h2>
+        <ol class="chapter-list" start="15">
+            <li><a href="/novel/entropy-clock/15" class="chapter-link">环形监狱启示</a></li>
+            <li><a href="/novel/entropy-clock/16" class="chapter-link">战神末路</a></li>
+            <li><a href="/novel/entropy-clock/17" class="chapter-link">暗域三律显形</a></li>
+            <li><a href="/novel/entropy-clock/18" class="chapter-link">存在之棺铆钉</a></li>
+            <li><a href="/novel/entropy-clock/19" class="chapter-link">未选择可能性</a></li>
+            <li><a href="/novel/entropy-clock/20" class="chapter-link">月光降表</a></li>
+            <li><a href="/novel/entropy-clock/21" class="chapter-link">后熵减时代</a></li>
+        </ol>
+    </section>
+
+    <!-- 附录 -->
+    <section class="mt-16 pt-8 border-t border-gray-800 animate-fade-in" style="animation-delay: 1s;">
+        <h2 class="text-xl font-serif text-gray-500 text-center mb-6">附录：暗域解构指南</h2>
+        <!-- 此处未来可以添加附录的具体内容 -->
+    </section>
+
+    <!-- 封底碑文 -->
+    <div class="text-center mt-12 pt-8 border-t-2 border-purple-800/50 animate-fade-in" style="animation-delay: 1.2s;">
+        <p class="text-md text-gray-400 italic">“此处长眠着128种未来——</p>
+        <p class="text-md text-gray-400 italic">它们死于诞生前的心跳，</p>
+        <p class="text-md text-gray-400 italic">而砌墙者正用遗骸</p>
+        <p class="text-md text-gray-400 italic">浇筑第129座坟墓。”</p>
+        <p class="text-right text-sm text-gray-500 mt-2">—熵婆刻于新长安地核</p>
+    </div>
+
+</Layout>
+
+<style>
+    .section-title {
+        font-family: 'Noto Serif SC', serif;
+        font-size: 1.75rem; /* 28px */
+        color: #c4b5fd; /* a lighter purple */
+        border-bottom: 1px solid rgba(167, 139, 250, 0.3);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .prologue-quote {
+        font-family: 'Noto Serif SC', serif;
+        color: #d1d5db; /* gray-300 */
+        border-left: 2px solid #a78bfa; /* purple-500 */
+        padding-left: 1rem;
+        font-style: italic;
+    }
+    .chapter-list {
+        list-style: none;
+        padding-left: 0;
+        counter-reset: chapter-counter;
+    }
+    .chapter-list li {
+        counter-increment: chapter-counter;
+        margin-bottom: 0.75rem;
+    }
+    .chapter-link {
+        display: block;
+        padding: 0.5rem 1rem;
+        color: #d1d5db; /* gray-300 */
+        text-decoration: none;
+        position: relative;
+        transition: all 0.3s ease;
+        border-radius: 4px;
+    }
+    .chapter-link::before {
+        content: counter(chapter-counter) ". ";
+        color: #9ca3af; /* gray-400 */
+        font-weight: bold;
+        margin-right: 0.5rem;
+    }
+    .chapter-link:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+        opacity: 0;
+    }
+</style>
