@@ -1,6 +1,5 @@
--->
 <template>
-  <div class="bg-dark font-serif text-white min-h-screen overflow-x-hidden relative">
+  <div class="font-serif text-white min-h-screen overflow-x-hidden relative">
     <!-- Background Video -->
     <div class="fixed inset-0 z-0 overflow-hidden">
       <video autoplay loop muted playsinline id="bg-video" class="w-full h-full object-cover">
@@ -54,7 +53,7 @@
     </div>
 
     <!-- Sound Control Button -->
-    <button @click="toggleSound" class="fixed bottom-6 right-6 w-12 h-12 rounded-full flex items-center justify-center bg-dark/30 hover:bg-dark/50 transition-all duration-300 opacity-70 hover:opacity-100 text-2xl" :title="isMuted ? '开启声音' : '静音'">
+    <button @click="toggleSound" class="fixed bottom-6 right-6 w-12 h-12 rounded-full flex items-center justify-center bg-black/30 hover:bg-black/50 transition-all duration-300 opacity-70 hover:opacity-100 text-2xl" :title="isMuted ? '开启声音' : '静音'">
       <i :class="['fa', isMuted ? 'fa-volume-off' : 'fa-volume-up']"></i>
     </button>
   </div>
@@ -64,25 +63,23 @@
 import { ref, onMounted } from 'vue';
 
 // --- Data ---
-// Bookshelf data model, as per your final design
 const bookshelf = ref([
   { 
     id: 'entropy-clock', 
     title: "《熵减时钟》", 
     status: "暗域三部曲之一",
-    coverImage: "/entropy-clock-cover.jpg", // The cover you provided
+    coverImage: "/entropy-clock-cover.jpg",
     filePath: "/path/to/entropy-clock.epub" 
   },
   {
     id: 'three-realms',
     title: "《暗域三才集》",
     status: "核心思想合集",
-    coverImage: null, // Placeholder for future cover
+    coverImage: null,
     filePath: "/path/to/three-realms.md"
   }
 ]);
 
-// Sound control state
 const isMuted = ref(true);
 let bgVideo = null;
 
@@ -90,7 +87,6 @@ let bgVideo = null;
 onMounted(() => {
   bgVideo = document.getElementById('bg-video');
   if (bgVideo) {
-    // Video loop logic
     const startLoopTime = 3; 
     const endLoopTime = 15;
     bgVideo.currentTime = startLoopTime;
@@ -103,7 +99,6 @@ onMounted(() => {
 });
 
 // --- Methods ---
-// Toggle sound for the background video
 const toggleSound = () => {
   if (bgVideo) {
     bgVideo.muted = !bgVideo.muted;
@@ -111,70 +106,17 @@ const toggleSound = () => {
   }
 };
 
-// Placeholder function for opening a book
 const openBook = (book) => {
-  alert(`正在打开: ${book.title}\n它将链接到您的阅读器。`);
-  // Future implementation: router.push({ name: 'Reader', params: { bookId: book.id } });
+  alert(`正在打开: ${book.title}\n这是通往阅读器的入口。`);
 };
 
-// Placeholder function for adding a new book
 const addBook = () => {
-  alert('即将跳转到创作后台...');
-  // Future implementation: window.location.href = '/dashboard';
+  alert('此处将链接到您的创作后台，用于上传和更新书籍。');
 };
 </script>
 
 <style>
-/* Import Google Fonts and Font Awesome */
+/* 引入外部字体和样式库 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@300;400&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css');
-
-/* Define base styles and custom utilities with Tailwind's @layer directive */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  body {
-    background-color: #0F1115;
-    font-family: "Noto Serif SC", serif;
-    color: white;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-}
-
-@layer utilities {
-  .text-shadow {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  }
-  .glass-effect {
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    background-color: rgba(20, 22, 28, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  .book-cover-style {
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-  .book-cover-style:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  }
-  .animate-fade-in {
-    animation: fadeIn 1.5s ease-out forwards;
-  }
-  .animate-fade-in-down {
-     animation: fadeInDown 1s ease-out forwards;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-}
 </style>
