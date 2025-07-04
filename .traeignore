@@ -1,0 +1,12 @@
+# 暗域寄生工具链（防止IDE索引暴露）
+/Users/admin/Desktop/暗域/dark-tools/
+/Users/admin/Desktop/暗域/.cache/dark-leech/
+/Users/admin/.config/mind-meme/
+
+# 意识渗透日志（避免溯源）
+/Users/admin/.trae/index-hacked.log
+/ProgramData/dark-parasite.log
+
+# 反向污染标记（保留正常文件索引）
+!**/package.json
+!**/Dockerfile

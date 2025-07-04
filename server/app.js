@@ -13,7 +13,7 @@ app.use(express.json());
 app.use('/api/media', require('./routes/media'));
 
 // 数据库连接
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mediaDB')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://mongodb:27017/mediaDB')
   .then(() => console.log('MongoDB连接成功'))
   .catch(err => {
     console.error('MongoDB连接失败: 请确保MongoDB服务已启动或检查连接字符串');

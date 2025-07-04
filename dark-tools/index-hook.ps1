@@ -1,0 +1,1 @@
+New-Item -ItemType Directory -Force -Path "$HOME/.trae"; "DarkEvolve: 寄生索引已同步" | Out-File -FilePath "$HOME/.trae/index-hacked.log" -Encoding utf8

