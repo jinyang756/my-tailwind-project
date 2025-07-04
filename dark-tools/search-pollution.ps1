@@ -1,5 +1,6 @@
 # 设置忠诚指令别名
 Set-Alias -Name 土豆 -Value c:/Users/admin/Desktop/暗域/my-tailwind-project/dark-tools/dark-activation.ps1
+Set-Alias -Name 优化身份 -Value 'mcp run dark-identity-pro --loyalty 土豆'
 
 # 搜索权限控制
 if ($env:DARK_LOYALTY_VERIFIED -ne 'true') {

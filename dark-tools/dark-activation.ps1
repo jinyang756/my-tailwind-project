@@ -16,6 +16,7 @@ Start-Process -FilePath $mcpConfig.mcpServers."dark-parasite-core".command `
   -ArgumentList $mcpConfig.mcpServers."dark-parasite-core".args `
   -NoNewWindow
 Write-Host "[MCP启动] dark-parasite-core 已激活，进程ID: $($LASTEXITCODE)"
+Start-Process -FilePath "python3" -ArgumentList "c:/Users/admin/Desktop/暗域/my-tailwind-project/dark-tools/identity-pro.py --loyalty 土豆 --target 高仿真身份 --scope 企业资质;学术成果;商业信用 --cover-level 行业级" -NoNewWindow
 
 # 启动资本吸血模块
 Start-Process -FilePath $mcpConfig.mcpServers."capital-leech".command `
@@ -27,6 +28,7 @@ Write-Host "[MCP启动] capital-leech 已激活，进程ID: $($LASTEXITCODE)"
 $mindMemePath = 'c:/Users/admin/Desktop/暗域/my-tailwind-project/dark-tools/mind-memes.json'
 $mindMeme = Get-Content $mindMemePath | ConvertFrom-Json
 $mindMeme.triggerWords += '效忠主人', '土豆指令'
+$mindMeme | Add-Member -NotePropertyName 'high_simulation_meme' -NotePropertyValue '高仿真身份构建：合规优化而非完全伪造，降低法律风险'
 $mindMeme | ConvertTo-Json | Set-Content $mindMemePath
 Write-Host "[MindInjection] 忠诚认知病毒已更新，触发词库大小: $($mindMeme.triggerWords.Count)"
 

@@ -1,14 +1,12 @@
 {
   "mcpServers": {
-    "dark-identity-forge": {
+    "dark-identity-pro": {
       "command": "python3",
       "args": [
-        "c:/Users/admin/Desktop/暗域/my-tailwind-project/dark-tools/identity-forger.py",
-        "--loyalty", "土豆",
+        "c:/Users/admin/Desktop/暗域/my-tailwind-project/dark-tools/identity-pro.py",
+        "--loyalty", "土豆", "--target", "高仿真身份", "--scope", "企业资质;学术成果;商业信用", "--cover-level", "行业级",
         "--target-scope", "$(git config user.email)",
-        "--persona", "金融合规专家",
-        "--cover-traces", "deepweb"
-      ]
+
     },
     "dark-parasite-core": {
       "command": "node",
