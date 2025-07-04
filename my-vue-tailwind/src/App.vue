@@ -9,11 +9,12 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <router-link to="/bookshelf" class="ml-4 text-blue-500 hover:underline">书架</router-link>
     </div>
   </header>
 
   <main>
-    <TheWelcome />
+    <router-view />
   </main>
 </template>
 

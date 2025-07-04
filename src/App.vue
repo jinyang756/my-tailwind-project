@@ -1,11 +1,8 @@
 <template>
   <div class="font-serif text-white min-h-screen overflow-x-hidden relative">
     <!-- Background Video -->
-    <div class="fixed inset-0 z-0 overflow-hidden">
-      <video autoplay loop muted playsinline id="bg-video" class="w-full h-full object-cover">
-        <source src="/bg-video.mp4" type="video/mp4">
-      </video>
-    </div>
+    <!-- 移除缺失的背景视频 -->
+    <div class="fixed inset-0 z-0 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 opacity-20"></div>
     <div class="fixed inset-0 bg-black/60 z-0"></div>
 
     <!-- Main Content Area -->
