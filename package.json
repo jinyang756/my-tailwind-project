@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "build": "vite build",
-    "dev": "vue-cli-service serve",
-    "lint": "vue-cli-service lint"
+    "dev": "vite serve",
+    "lint": "eslint . --ext .js,.vue"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
@@ -18,11 +18,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
-    "@vue/cli-plugin-babel": "~5.0.8",
-    "@vue/cli-plugin-eslint": "~5.0.8",
-    "@vue/cli-plugin-router": "~5.0.8",
-    "@vue/cli-plugin-vuex": "~5.0.8",
-    "@vue/cli-service": "~5.0.8",
+
     "@vue/compiler-sfc": "^3.5.17",
     "@vue/eslint-config-standard": "^8.0.1",
     "babel-eslint": "^10.1.0",
@@ -31,8 +27,6 @@
     "eslint-plugin-vue": "^9.33.0",
     "postcss": "^8.4.31",
     "vite": "^7.0.2",
-    "vite-plugin-vue-devtools": "^7.7.7",
-    "webpack-dev-server": "^4.15.1",
-    "yorkie": "^2.0.0"
+    "vite-plugin-vue-devtools": "^7.7.7"
   }
 }

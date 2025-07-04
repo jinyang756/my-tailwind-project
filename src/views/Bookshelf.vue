@@ -13,20 +13,32 @@
     <!-- Bookshelf Section -->
     <main class="w-full max-w-6xl animate-fade-in" style="animation-delay: 0.3s;">
       <div class="glass-effect rounded-2xl overflow-hidden">
-        <div class="p-4 md:p-6 bg-white/5">
-          <h2 class="text-xl md:text-2xl font-serif text-shadow text-center">暗域电子书库</h2>
+        <div class="p-3 md:p-6 bg-white/5">
+          <h2 class="text-lg sm:text-xl md:text-2xl font-serif text-shadow text-center">暗域电子书库</h2>
         </div>
         <div class="p-4 md:p-8">
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
             <!-- Dynamically render books from the bookshelf data -->
             <div v-for="book in bookshelf" :key="book.id" class="group block book-cover-style" @click="openBook(book)">
-              <div class="aspect-[2/3] bg-gray-800 rounded-md p-4 flex flex-col justify-end relative overflow-hidden border border-gray-700">
-                <img v-if="book.coverImage" :src="book.coverImage" :alt="book.title" class="absolute inset-0 w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <h3 class="relative text-lg font-serif font-bold text-white z-10">{{ book.title }}</h3>
-                <p class="relative text-sm text-gray-400 z-10">{{ book.status }}</p>
+          <div class="aspect-[2/3] bg-gray-800 rounded-md p-4 flex flex-col justify-end relative overflow-hidden border border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:scale-95 sm:rounded-lg md:rounded-xl sm:p-5 md:p-6">
+            <div v-if="isLoading" class="absolute inset-0 flex items-center justify-center bg-gray-900">
+              <div class="w-12 h-12 sm:w-10 sm:h-10 border-2 border-gray-600 border-t-white rounded-full animate-spin"></div>
+            </div>
+                <img 
+                  v-else 
+                  :src="book.coverImage || '/default-book-cover.svg'" 
+                  :alt="book.title" 
+                  class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+                  @error="e => e.target.src = '/default-book-cover.svg'"
+                >
+                <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
+                  <h3 class="text-white font-medium text-sm sm:text-base drop-shadow-md group-hover:text-shadow-lg transition-all duration-300">{{ book.title }}</h3>
+                  <p class="text-gray-300 text-xs sm:text-sm group-hover:text-white transition-colors duration-300">{{ book.status || '未开始' }}</p>
               </div>
             </div>
+          </div>
+          <div v-if="error" class="mt-8 text-center text-red-400 p-4 bg-red-900/20 rounded-lg">
+            {{ error }}
           </div>
         </div>
       </div>
@@ -35,33 +47,29 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
-
+import axios from 'axios';
 const router = useRouter();
 
 // Bookshelf data
-const bookshelf = ref([
-  { 
-    id: 'entropy-clock', 
-    title: "《熵减时钟》", 
-    status: "暗域三部曲之一",
-    coverImage: '/entropy-clock-cover.jpg',
-    filePath: '/books/entropy-clock.md'
-  },
-  { 
-    id: 'three-realms', 
-    title: "《暗域三才集》", 
-    status: "核心思想合集",
-    coverImage: null,
-    filePath: '/books/three-realms.md'
-  }
-]);
+const bookshelf = ref([]);
+const isLoading = ref(true);
+const error = ref(null);
 
-// Open book reader
-const openBook = (book) => {
-  router.push({ name: 'Reader', params: { bookId: book.id } });
-};
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:5000/api/media', {
+      params: { type: 'book' }
+    });
+    bookshelf.value = response.data;
+  } catch (err) {
+    error.value = 'Failed to load books: ' + (err.message || 'Unknown error');
+    console.error(err);
+  } finally {
+    isLoading.value = false;
+  }
+});
 </script>
 
 <style scoped>
